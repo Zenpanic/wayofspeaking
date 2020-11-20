@@ -17,14 +17,14 @@ app.get('/', (req, res) => {
 
 app.post('/send_message', (req, res) => {
 
-    const transporter = nodemailer.createTransport(smtpTransport({
+    /* const transporter = nodemailer.createTransport(smtpTransport({
         service: 'gmail',
         host: 'smtp.gmail.com',
         auth: {
             user: process.env.GMAIL_LOGIN,
             pass: process.env.GMAIL_PASSWORD
         }
-    }));
+    })); */
 
     const { email, message } = req.body;
 
