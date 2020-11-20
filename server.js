@@ -7,7 +7,6 @@ const app = express();
 
 app.use(cors());
 app.use(express.static("./files/"));
-app.use(express.json());
 
 app.get('/', (req, res) => {
     res.sendFile('index.html');
@@ -26,7 +25,7 @@ app.post('/send_message', (req, res) => {
 
     const { email, message } = req.body;
 
-    const mailOptions = {
+    /* const mailOptions = {
         from: process.env.GMAIL_LOGIN,
         to: process.env.RECEIVER,
         subject: 'Nouveau message !',
@@ -39,9 +38,9 @@ app.post('/send_message', (req, res) => {
         } else {
             console.log('Email sent: ' + info.response);
         }
-    });
+    }); */
 
-    res.status(200).sendFile('index.html');
+    res.status(200).send(email, message);
 })
 
 app.listen(process.env.PORT);
