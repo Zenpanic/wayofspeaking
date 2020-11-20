@@ -7,6 +7,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.static("./files/"));
+app.use(express.json());
 app.use(express.urlencoded({
     extended: false
 }))
@@ -28,6 +29,8 @@ app.post('/sendMessage', (req, res) => {
 
     const { email, message } = req.body;
 
+
+
     /* const mailOptions = {
         from: process.env.GMAIL_LOGIN,
         to: process.env.RECEIVER,
@@ -43,7 +46,7 @@ app.post('/sendMessage', (req, res) => {
         }
     }); */
 
-    res.send(message).end();
+    res.json(message);
 })
 
 app.listen(process.env.PORT);
