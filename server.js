@@ -29,14 +29,11 @@ app.post('/sendMessage', (req, res) => {
 
     const { email, message } = req.body;
 
-    const Jemail = JSON.stringify(email);
-    const Jmessage = JSON.stringify(message);
-
     const mailOptions = {
         from: process.env.GMAIL_LOGIN,
         to: process.env.RECEIVER,
         subject: 'Nouveau message !',
-        message: `Nouveau message from ${Jemail}: ${Jmessage}`
+        message: `Nouveau message from ${email}: ${message}`
     }
 
     transporter.sendMail(mailOptions, function (error, info) {
