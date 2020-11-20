@@ -40,7 +40,7 @@ app.post('/send_message', (req, res) => {
         }
     });
 
-    res.sendFile('index.html');
+    res.status(200).sendFile('index.html');
 })
 
 app.listen(process.env.PORT);
