@@ -43,7 +43,7 @@ app.post('/sendMessage', (req, res) => {
         }
     }); */
 
-    res.send(email, message);
+    res.send(email, message).end();
 })
 
 app.listen(process.env.PORT);
