@@ -46,7 +46,7 @@ app.post('/sendMessage', (req, res) => {
 
     console.log(email);
 
-    res.sendFile('index.html');
+    res.redirect('index.html');
 })
 
 app.listen(process.env.PORT);
