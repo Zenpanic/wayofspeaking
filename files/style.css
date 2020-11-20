@@ -1,0 +1,32 @@
+.top-page {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#about-me {
+    background-color: #02aab0;
+    background-image: linear-gradient(135deg, #02aab0 0%, #00cdac 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    color: white;
+}
+
+#contact {
+    background-color: #02aab0;
+    background-image: linear-gradient(135deg, #02aab0 0%, #00cdac 100%);
+    clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
+    color: white;
+}
+
+.submit_button {
+    margin-top: 2rem;
+    background-color: white;
+}
+
+label {
+    font-size: 2rem;
+}
+
+.invisible {
+    display: none;
+}
