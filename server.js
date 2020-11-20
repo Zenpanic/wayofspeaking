@@ -29,8 +29,6 @@ app.post('/sendMessage', (req, res) => {
 
     const { email, message } = req.body;
 
-
-
     /* const mailOptions = {
         from: process.env.GMAIL_LOGIN,
         to: process.env.RECEIVER,
@@ -46,7 +44,9 @@ app.post('/sendMessage', (req, res) => {
         }
     }); */
 
-    res.json(message);
+    console.log(email);
+
+    res.sendFile('index.html');
 })
 
 app.listen(process.env.PORT);
