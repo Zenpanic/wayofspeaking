@@ -5,14 +5,7 @@ const smtpTransport = require('nodemailer-smtp-transport');
 
 const app = express();
 
-const transporter = nodemailer.createTransport(smtpTransport({
-    service: 'gmail',
-    host: 'smtp.gmail.com',
-    auth: {
-        user: 'user.gmail',
-        pass: 'user.password'
-    }
-}));
+
 
 app.use(cors());
 app.use(express.static("/files/"));
@@ -23,6 +16,14 @@ app.get('/', (req, res) => {
 })
 
 app.post('/send_message', (req, res) => {
+    const transporter = nodemailer.createTransport(smtpTransport({
+        service: 'gmail',
+        host: 'smtp.gmail.com',
+        auth: {
+            user: 'user.gmail',
+            pass: 'user.password'
+        }
+    }));
     res.json("Message Sent!");
 })
 
