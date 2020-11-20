@@ -158,19 +158,19 @@
                 <div class="ma1 pa2">
                     <label for="email" class="f6 b db mb2">E-mail</label>
                     <input id="email" name="email" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="text"
-                        aria-describedby="name-desc">
+                        aria-describedby="name-desc" required>
                     <small id="name-desc" class="f6 black-60 db mb2">Merci d'entrer une adresse e-mail valide.</small>
                 </div>
                 <div class="ma1 pa2">
                     <label for="message" class="f6 b db mb2">Message</label>
                     <textarea id="message" name="message"
                         class="db border-box hover-black w-100 ba b--black-20 pa2 br2 mb2"
-                        aria-describedby="comment-desc"></textarea>
+                        aria-describedby="comment-desc" required></textarea>
                     <small id="comment-desc" class="f6 black-60">Vous avez une question ? Vous souhaitez un devis
                         ?</small>
                 </div>
                 <div>
-                    <button type="submit" name="submit-btn" class="btn-link">Envoyer</button>
+                    <button onclick="sendMessage" name="submit-btn" class="btn-link">Envoyer</button>
                 </div>
             </form>
         </div>
