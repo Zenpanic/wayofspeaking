@@ -46,7 +46,7 @@ app.post('/sendMessage', (req, res) => {
 
     console.log(email);
 
-    res.redirect('index.html');
+    res.redirect('/');
 })
 
 app.listen(process.env.PORT);
