@@ -33,7 +33,7 @@ app.post('/sendMessage', (req, res) => {
         from: process.env.GMAIL_LOGIN,
         to: process.env.RECEIVER,
         subject: 'Nouveau message !',
-        message: `Nouveau message from ${email}: ${message}`
+        message: message
     }
 
     transporter.sendMail(mailOptions, function (error, info) {
