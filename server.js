@@ -18,18 +18,18 @@ app.get('/', (req, res) => {
 
 app.post('/sendMessage', (req, res) => {
 
-    /* const transporter = nodemailer.createTransport(smtpTransport({
+    const transporter = nodemailer.createTransport(smtpTransport({
         service: 'gmail',
         host: 'smtp.gmail.com',
         auth: {
             user: process.env.GMAIL_LOGIN,
             pass: process.env.GMAIL_PASSWORD
         }
-    })); */
+    }));
 
     const { email, message } = req.body;
 
-    /* const mailOptions = {
+    const mailOptions = {
         from: process.env.GMAIL_LOGIN,
         to: process.env.RECEIVER,
         subject: 'Nouveau message !',
@@ -42,7 +42,7 @@ app.post('/sendMessage', (req, res) => {
         } else {
             console.log('Email sent: ' + info.response);
         }
-    }); */
+    });
 
     console.log(email);
 
