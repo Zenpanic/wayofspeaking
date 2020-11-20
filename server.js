@@ -27,7 +27,10 @@ app.post('/sendMessage', (req, res) => {
         }
     }));
 
-    const { email, message } = req.body;
+    const { bodyEmail, bodyMessage } = req.body;
+
+    const email = JSON.stringify(bodyEmail);
+    const message = JSON.stringify(bodyMessage);
 
     const mailOptions = {
         from: process.env.GMAIL_LOGIN,
