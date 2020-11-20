@@ -23,8 +23,8 @@ images.forEach(image => {
 })
 
 const sendMessage = () => {
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+    let email = document.getElementById('email').value;
+    let message = document.getElementById('message').value;
     fetch('https://wayofspeaking.herokuapp.com/send_message', {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
