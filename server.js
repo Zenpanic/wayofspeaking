@@ -43,9 +43,7 @@ app.post('/sendMessage', (req, res) => {
         }
     }); */
 
-    console.log(message, email);
-
-    res.end();
+    res.send(email, message);
 })
 
 app.listen(process.env.PORT);
