@@ -21,3 +21,4 @@ const images = document.querySelectorAll('.appear');
 images.forEach(image => {
     observer.observe(image);
 })
+
