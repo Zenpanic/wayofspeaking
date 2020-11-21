@@ -32,7 +32,7 @@ app.post('/sendMessage', (req, res) => {
     const email = req.body.email;
     const message = req.body.message;
 
-    const mailOptions = {
+    /* const mailOptions = {
         from: process.env.GMAIL_LOGIN,
         to: process.env.RECEIVER,
         subject: 'Nouveau message !',
@@ -47,9 +47,9 @@ app.post('/sendMessage', (req, res) => {
         }
     });
 
-    console.log(email);
+    console.log(email); */
 
-    res.redirect('/');
+    res.json(message + email);
 })
 
 app.listen(process.env.PORT);
