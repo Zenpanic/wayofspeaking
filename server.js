@@ -12,22 +12,25 @@ app.use(express.urlencoded({
     extended: false
 }))
 
+const transporter = nodemailer.createTransport(smtpTransport({
+    service: 'gmail',
+    host: 'smtp.gmail.com',
+    auth: {
+        user: process.env.GMAIL_LOGIN,
+        pass: process.env.GMAIL_PASSWORD
+    }
+}));
+
 app.get('/', (req, res) => {
     res.sendFile('index.html');
 })
 
 app.post('/sendMessage', (req, res) => {
 
-    const transporter = nodemailer.createTransport(smtpTransport({
-        service: 'gmail',
-        host: 'smtp.gmail.com',
-        auth: {
-            user: process.env.GMAIL_LOGIN,
-            pass: process.env.GMAIL_PASSWORD
-        }
-    }));
+    /* const { email, message } = req.body; */
 
-    const { email, message } = req.body;
+    const email = req.body.email;
+    const message = req.body.message;
 
     const mailOptions = {
         from: process.env.GMAIL_LOGIN,
