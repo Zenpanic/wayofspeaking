@@ -33,7 +33,7 @@ app.post('/sendMessage', (req, res) => {
         from: process.env.GMAIL_LOGIN,
         to: process.env.RECEIVER,
         subject: 'Nouveau message !',
-        html: `From: ${email}
+        text: `From: ${email} 
         Message: ${message}`
     }
 
