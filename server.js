@@ -36,7 +36,7 @@ app.post('/sendMessage', (req, res) => {
         from: process.env.GMAIL_LOGIN,
         to: process.env.RECEIVER,
         subject: 'Nouveau message !',
-        message: JSON.stringify(message)
+        message: message
     }
 
     transporter.sendMail(mailOptions, function (error, info) {
