@@ -49,7 +49,7 @@ app.post('/sendMessage', (req, res) => {
         }
     });
 
-    res.send(jMessage);
+    res.redirect('/');
 })
 
 app.listen(process.env.PORT);
