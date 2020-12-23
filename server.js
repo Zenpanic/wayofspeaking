@@ -16,7 +16,7 @@ const transporter = nodemailer.createTransport(smtpTransport({
     host: 'smtp.mail.yahoo.com',
     secure: false,
     service: 'yahoo',
-    port: 465,
+    port: 587,
     auth: {
         user: process.env.GMAIL_LOGIN,
         pass: process.env.GMAIL_PASSWORD
