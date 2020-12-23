@@ -12,14 +12,7 @@ app.use(express.urlencoded({
     extended: false
 }))
 
-let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    host: 'smtp.gmail.com',
-    auth: {
-        user: process.env.GMAIL_LOGIN,
-        pass: process.env.GMAIL_PASSWORD
-    }
-});
+
 
 app.get('/', (req, res) => {
     res.sendFile('index.html');
@@ -27,14 +20,22 @@ app.get('/', (req, res) => {
 
 app.post('/sendMessage', (req, res) => {
 
+    let transporter = nodemailer.createTransport({
+        service: 'Gmail',
+        host: 'smtp.gmail.com',
+        auth: {
+            user: process.env.GMAIL_LOGIN,
+            pass: process.env.GMAIL_PASSWORD
+        }
+    });
+
     const { email, message } = req.body;
 
     const mailOptions = {
         from: process.env.GMAIL_LOGIN,
         to: process.env.RECEIVER,
         subject: 'Nouveau message !',
-        text: `From: ${email}
-        Message: ${message}`
+        text: `From: ${email} Message: ${message}`
     }
 
     transporter.sendMail(mailOptions, (error, info) => {
