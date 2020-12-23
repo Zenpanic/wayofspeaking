@@ -12,19 +12,13 @@ app.use(express.urlencoded({
     extended: false
 }))
 
-const transporter = nodemailer.createTransport(smtpTransport({
+let transporter = nodemailer.createTransport({
     host: 'smtp.mail.yahoo.com',
-    secure: true,
-    service: 'Yahoo',
-    port: 465,
     auth: {
         user: process.env.GMAIL_LOGIN,
         pass: process.env.GMAIL_PASSWORD
-    },
-    tls: {
-        rejectUnauthorized: false
     }
-}));
+});
 
 app.get('/', (req, res) => {
     res.sendFile('index.html');
@@ -42,7 +36,7 @@ app.post('/sendMessage', (req, res) => {
         Message: ${message}`
     }
 
-    transporter.sendMail(mailOptions, function (error, info) {
+    transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.log(error);
         } else {
