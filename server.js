@@ -15,6 +15,9 @@ app.use(express.urlencoded({
 const transporter = nodemailer.createTransport(smtpTransport({
     service: 'gmail',
     host: 'smtp.gmail.com',
+    secure: true,
+    requireTLS: true,
+    port: 465,
     auth: {
         user: process.env.GMAIL_LOGIN,
         pass: process.env.GMAIL_PASSWORD
