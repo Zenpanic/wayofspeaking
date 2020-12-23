@@ -14,7 +14,7 @@ app.use(express.urlencoded({
 
 let transporter = nodemailer.createTransport({
     service: 'gmail',
-    host: 'smtp.mail.yahoo.com',
+    host: 'smtp.gmail.com',
     auth: {
         user: process.env.GMAIL_LOGIN,
         pass: process.env.GMAIL_PASSWORD
