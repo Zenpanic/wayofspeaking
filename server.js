@@ -13,9 +13,9 @@ app.use(express.urlencoded({
 }))
 
 const transporter = nodemailer.createTransport(smtpTransport({
-    host: 'smtp.gmail.com',
-    secure: true,
-    requireTLS: true,
+    host: 'smtp.mail.yahoo.com',
+    secure: false,
+    service: 'yahoo',
     port: 465,
     auth: {
         user: process.env.GMAIL_LOGIN,
