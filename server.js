@@ -1,8 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
-/* const smtpTransport = require('nodemailer-smtp-transport');
- */
+const smtpTransport = require('nodemailer-smtp-transport');
+
 const app = express();
 
 app.use(cors());
