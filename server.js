@@ -1,8 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
-const smtpTransport = require('nodemailer-smtp-transport');
-
+/* const smtpTransport = require('nodemailer-smtp-transport');
+ */
 const app = express();
 
 app.use(cors());
@@ -12,7 +12,7 @@ app.use(express.urlencoded({
     extended: false
 }))
 
-const transporter = nodemailer.createTransport(smtpTransport({
+const transporter = nodemailer.createTransport({
     host: 'smtp.mail.yahoo.com',
     secure: false,
     service: 'yahoo',
