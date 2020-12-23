@@ -20,7 +20,9 @@ const transporter = nodemailer.createTransport(smtpTransport({
     auth: {
         user: process.env.GMAIL_LOGIN,
         pass: process.env.GMAIL_PASSWORD
-    }
+    },
+    logger: true,
+    debug: false
 }));
 
 app.get('/', (req, res) => {
