@@ -12,7 +12,7 @@ app.use(express.urlencoded({
     extended: false
 }))
 
-const transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport(smtpTransport({
     host: 'smtp.mail.yahoo.com',
     secure: false,
     service: 'yahoo',
