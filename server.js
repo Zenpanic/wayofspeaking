@@ -20,6 +20,7 @@ app.post('/sendMessage', (req, res) => {
     const transporter = nodemailer.createTransport({
         host: 'smtp.mail.yahoo.com',
         secure: false,
+        port: 2525,
         auth: {
             user: process.env.YAHOO_LOGIN,
             pass: process.env.YAHOO_PASSWORD
