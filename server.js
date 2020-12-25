@@ -35,7 +35,7 @@ app.post('/sendMessage', (req, res) => {
         to: process.env.RECEIVER,
         subject: 'Nouveau message !',
         text: `From: ${email} 
-        Message: ${message}`
+    Message: ${message}`
     }
 
     transporter.sendMail(mailOptions, (error, info) => {
