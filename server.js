@@ -17,6 +17,12 @@ app.get('/', (req, res) => {
 
 app.post('/sendMessage', (req, res) => {
 
+    let { email, message, phoneNumberartYUIo } = req.body;
+
+    if (phoneNumberartYUIo.trim() !== '') {
+        return res.redirect('/');
+    }
+
     const transporter = nodemailer.createTransport({
         host: 'smtp.mail.yahoo.com',
         service: 'yahoo',
@@ -27,8 +33,6 @@ app.post('/sendMessage', (req, res) => {
             pass: process.env.YAHOO_PASSWORD
         }
     });
-
-    let { email, message } = req.body;
 
     let mailOptions = {
         from: "'Bot WayOfSpeaking' <bot.wayofspeaking@yahoo.com",
