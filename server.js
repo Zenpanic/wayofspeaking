@@ -33,7 +33,7 @@ app.post('/sendMessage', (req, res) => {
     let { email, message } = req.body;
 
     let mailOptions = {
-        from: process.env.GMAIL_LOGIN,
+        from: "'Bot WayOfSpeaking' <bot.wayofspeaking@yahoo.com",
         to: process.env.RECEIVER,
         subject: 'Nouveau message !',
         text: `From: ${email} Message: ${message}`
