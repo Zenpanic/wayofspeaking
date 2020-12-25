@@ -25,9 +25,6 @@ app.post('/sendMessage', (req, res) => {
         auth: {
             user: process.env.YAHOO_LOGIN,
             pass: process.env.YAHOO_PASSWORD
-        },
-        tls: {
-            rejectUnauthorized: false
         }
     });
 
@@ -37,7 +34,7 @@ app.post('/sendMessage', (req, res) => {
         from: "'Bot WayOfSpeaking' <bot.wayofspeaking@yahoo.com",
         to: process.env.RECEIVER,
         subject: 'Nouveau message !',
-        text: email + " " + message
+        text: `From: ${email} Message: ${message}`
     }
 
     transporter.sendMail(mailOptions, (error, info) => {
