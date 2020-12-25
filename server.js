@@ -19,8 +19,7 @@ app.post('/sendMessage', (req, res) => {
 
     const transporter = nodemailer.createTransport({
         host: 'smtp.mail.yahoo.com',
-        secure: false,
-        port: 2525,
+        service: 'yahoo',
         auth: {
             user: process.env.YAHOO_LOGIN,
             pass: process.env.YAHOO_PASSWORD
@@ -36,7 +35,7 @@ app.post('/sendMessage', (req, res) => {
         from: "'Bot WayOfSpeaking' <bot.wayofspeaking@yahoo.com",
         to: process.env.RECEIVER,
         subject: 'Nouveau message !',
-        text: `From: ${email} Message: ${message}`
+        text: email + " " + message
     }
 
     transporter.sendMail(mailOptions, (error, info) => {
