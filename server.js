@@ -34,8 +34,7 @@ app.post('/sendMessage', (req, res) => {
         from: "'Bot WayOfSpeaking' <bot.wayofspeaking@yahoo.com",
         to: process.env.RECEIVER,
         subject: 'Nouveau message !',
-        text: `From: ${email} 
-    Message: ${message}`
+        text: 'From: ' + email + '\n' + 'Message: ' + message
     }
 
     transporter.sendMail(mailOptions, (error, info) => {
