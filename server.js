@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
-const smtpTransport = require('nodemailer-smtp-transport');
 
 const app = express();
 
@@ -12,26 +11,27 @@ app.use(express.urlencoded({
     extended: false
 }))
 
-
-
 app.get('/', (req, res) => {
     res.sendFile('index.html');
 })
 
 app.post('/sendMessage', (req, res) => {
 
-    let transporter = nodemailer.createTransport({
-        service: 'Gmail',
-        host: 'smtp.gmail.com',
+    const transporter = nodemailer.createTransport({
+        host: 'smtp.mail.yahoo.com',
+        secure: false,
         auth: {
-            user: process.env.GMAIL_LOGIN,
-            pass: process.env.GMAIL_PASSWORD
+            user: process.env.YAHOO_LOGIN,
+            pass: process.env.YAHOO_PASSWORD
+        },
+        tls: {
+            rejectUnauthorized: false
         }
     });
 
-    const { email, message } = req.body;
+    let { email, message } = req.body;
 
-    const mailOptions = {
+    let mailOptions = {
         from: process.env.GMAIL_LOGIN,
         to: process.env.RECEIVER,
         subject: 'Nouveau message !',
@@ -40,7 +40,7 @@ app.post('/sendMessage', (req, res) => {
 
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-            console.log(error);
+            return console.log(error);
         } else {
             console.log('Email sent: ' + info.response);
         }
