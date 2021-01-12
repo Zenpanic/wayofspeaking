@@ -54,6 +54,7 @@ label {
     top: 50%;
     right: 2em;
     position: fixed;
+    z-index: 10;
 
 }
 
