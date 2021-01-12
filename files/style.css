@@ -1,3 +1,11 @@
+html {
+    background-color: #f7fafc;
+}
+
+h2 {
+    font-weight: 700;
+}
+
 .top-page {
     display: flex;
     flex-direction: column;
@@ -39,3 +47,60 @@ label {
     #about-me {
         padding-bottom: 50vh;
     }
+}
+
+.homeButton {
+    padding: 0;
+    top: 50%;
+    right: 2em;
+    position: fixed;
+
+}
+
+.legalBreaker {
+    width: 50%;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.legal-site-title {
+    margin: auto;
+    text-align: center;
+    padding: 1em 0 1em 0;
+    font-weight: 900;
+    font-size: 4em;
+    cursor: pointer;
+}
+
+.title-home-link, .title-home-link:visited, .title-home-link:focus, .title-home-link:hover, .title-home-link:active {
+    text-decoration: none;
+    color: #cb0e43;
+
+}
+
+.mentions, .mentions:visited, .mentions:focus, .mentions:hover, .mentions:active {
+    text-decoration: none;
+    color: grey;
+}
+
+.legalContainer {
+    padding: 2em 1em 2em 1em;
+}
+
+.legalContainer > p {
+    font-weight: 500;
+    line-height: 1.3em;
+    font-size: 1.1em;
+}
+
+.legal-main-title {
+    color: #01c2ad;
+    padding-bottom: 0.5em;
+    font-size: 2em;
+}
+
+.legal-sub-title {
+    color: #a96cf2;
+    padding-top: 1em;
+    font-size: 1.5em;
+}
