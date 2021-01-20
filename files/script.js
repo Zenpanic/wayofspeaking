@@ -6,10 +6,10 @@ let options = {
 
 let callback = (entries, observer) => {
     let image = entries[0]
-    if (!image.target.classList.contains('animate__slideInLeft')) {
+    if (!image.target.classList.contains('animate__zoomIn')) {
         if (image.isIntersecting) {
-            console.log(image)
-            image.target.classList.add('animate__slideInLeft')
+            image.target.classList.remove('hide');
+            image.target.classList.add('animate__zoomIn')
         }
     }
 }
